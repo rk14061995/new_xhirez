@@ -94,10 +94,10 @@
                         </ul>
                       </div>
                     </div>
-                    <div class="card-content collapse show">
+                    <div class="card-body collapse show">
                       
                       <div class="table-responsive">
-                        <table class="table table-striped">
+                        <table class="table table-striped"id="categoryTable">
                           <thead>
                             <tr>
                               <th scope="col">SNo</th>
@@ -176,6 +176,9 @@ $(document).on('submit','#insertcategory',function(e){
 });
 </script>
 <script type="text/javascript">
+   $(document).ready( function () {
+    $('#categoryTable').DataTable();
+} );
         $(document).ready(function(){
           $('.delete').on('click',function(){ 
              var category_id=$(this).attr("category_id");

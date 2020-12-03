@@ -185,9 +185,9 @@ class Admin_Dashboard extends CI_Controller
 	}
 	public function addCompanyType()
 	{ 
-		 // $data['getCompanyType']=$this->Admin_Com->getCompanyType();		 
+		 $data['plan_type']=$this->db->get('plan_type')->result();		 
 		 $this->load->view('admin/Layout/header');
-		 $this->load->view('admin/Pages/add_PlanType');
+		 $this->load->view('admin/Pages/add_PlanType',$data);
 		 $this->load->view('admin/Layout/footer');
 	}
 	public function view_CompanyType()

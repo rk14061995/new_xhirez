@@ -3,69 +3,89 @@
         <div class="content-wrapper-before"></div>
         <div class="content-body">
             <section class="textarea-select"> 
-              <div class="row match-height">
-                  <div class="col-lg-8 offset-md-2 col-md-12">
+              <div class="row match-height mt-1">
+                  <div class="col-md-4">
                       <div class="card">
                           <div class="card-header">
-                              <h4 class="card-title">Add Plan Type</h4>
+                              <h4 class="card-title">New Plan </h4>
                           </div>
 
-                          <div class="card-block">
-                              <div class="card-body">
-                                <form id="insert">
-                                  <h5 class="mt-2">Plan Type</h5>
-                                  <fieldset class="form-group">
-                                      <!-- <p class="text-muted">Textarea description text.</p> -->
-                                      <input type="text" class="form-control" required  name="Companytype"  >
-                                  </fieldset>
-                                  <fieldset class="form-group">
-                                      <button type="submit" class="btn btn-success btn-min-width mr-1 mb-1">Add</button>
-                                  </fieldset>
-                                  </form>
-                                </div>   
-                             </div>
-                       
-
-                          <!-- <div class="card-block">
-                              <div class="card-body">
-                                  <h5 class="mt-2">Basic Select</h5>
-                                  <fieldset class="form-group">
-                                      <select class="form-control" id="basicSelect">
-                                        <option>Select Option</option>
-                                        <option>Option 1</option>
-                                        <option>Option 2</option>
-                                        <option>Option 3</option>
-                                        <option>Option 4</option>
-                                        <option>Option 5</option>
-                                      </select>
-                                  </fieldset>
-                                  <h5 class="mt-2">Custom select</h5>
-                                  <p>To use custom select add class<code>.custom-select</code> to select.</p>
-                                  <fieldset class="form-group">
-                                      <select class="custom-select" id="customSelect">
-                                          <option selected>Open this select menu</option>
-                                          <option value="1">One</option>
-                                          <option value="2">Two</option>
-                                          <option value="3">Three</option>
-                                      </select>
-                                  </fieldset>
-                                  <h5 class="mt-2">Multiple select</h5>
-                                  <p>To use multiple select add an attribute<code> multiple="multiple"</code>.</p>
-                                  <fieldset class="form-group">
-                                      <select class="form-control" id="countrySelect" multiple="multiple">
-                                          <option selected="selected">United States</option>
-                                          <option>Canada</option>
-                                          <option selected="selected">United Kingdom</option>
-                                          <option>Japan</option>
-                                          <option>Australia</option>
-                                          <option>Germany</option>
-                                          <option selected="selected">India</option>
-                                          
-                                      </select>
-                                  </fieldset>
+                         
+                          <div class="card-body">
+                            <form id="insertPlan">
+                              
+                              <div class="row">
+                                <div class="col-md-12">
+                                  <label>Name</label>
+                                  <input type="text" class="form-control" required  name="Companytype"  >
+                                </div>
                               </div>
-                          </div> -->
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <label>Currency</label>
+                                  <input type="text" class="form-control" required  name="CompanyCurrecy"  >
+                                </div>
+                                <div class="col-md-6">
+                                  <label>Price</label>
+                                  <input type="text" class="form-control" required  name="CompanyPrice"  >
+                                </div>
+                              </div>
+                              
+                              <div class="row">
+                                <div class="col-md-12">
+                                  <label>Description</label>
+                                  <textarea class="form-control" required  name="CompanyDesc"></textarea>
+                                  <script>
+                                          CKEDITOR.replace( 'CompanyDesc' );
+                                  </script>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-12">
+                                  <hr>
+                                  <button type="submit" class="btn btn-success btn-min-width mr-1 mb-1">Add</button>
+                                </div>
+                              </div>
+                              
+                              </form>
+                            </div>   
+                            
+                       
                       </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card">
+                      
+                      <div class="card-body">
+                        <table class="table" id="planTable">
+                          <thead>
+                            <th>S.No</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                          </thead>
+                          <tbody>
+                            <?php $i=1; ?>
+                            <?php foreach($plan_type as $type): ?>
+                              <tr>
+                                <td><?=$i?></td>
+                                <td><?=$type->c_type_name?></td>
+                                <td><?=$type->CompanyCurrecy .' '.$type->CompanyPrice?></td>
+                                <td>Active</td>
+                                <td>
+                                  <a href="" class="btn btn-info"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                  <a href="" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                </td>
+                              </tr>
+                              <?php $i++; ?>
+                            <?php endforeach;?>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    
+                    
                   </div>
                   
               </div>
@@ -75,7 +95,10 @@
       </div>
     </div>
    <script type="text/javascript"> 
-$(document).on('submit','#insert',function(e){
+    $(document).ready( function () {
+          $('#planTable').DataTable();
+      } );
+$(document).on('submit','#insertPlan',function(e){
      e.preventDefault();
          var formData= new FormData($(this)[0]);
          // alert('cas');

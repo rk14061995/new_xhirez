@@ -36,9 +36,8 @@
               </div>
             </div>
             <div class="card-content collapse show">
-              
-              <div class="table-responsive">
-                <table class="table table-striped">
+              <div class="card-body">
+                <table class="table table-striped" id="jobsTable">
                   <thead>
                     <tr>
                       <th scope="col">SNo</th>
@@ -46,7 +45,7 @@
                       <th scope="col">Type</th> 
                       <th scope="col">Company</th> 
                       <th scope="col">Title</th> 
-                      <th scope="col">Decription</th> 
+                      <!-- <th scope="col">Decription</th>  -->
                       <th scope="col">Vacancies</th> 
                       <th scope="col">Last Date</th> 
                        <th scope="col">Status</th>
@@ -70,7 +69,7 @@
                         <td><?=$JobDetails->category_name?></td>
                         <td><?=$JobDetails->company_name?></td>
                         <td><?=$JobDetails->job_title?></td>
-                        <td><?=$JobDetails->job_desc?></td>
+                        <!-- <td><?=$JobDetails->job_desc?></td> -->
                         <td><?=$JobDetails->vacancies_?></td>
                         <td><?=$JobDetails->last_date?></td>
                         <?php
@@ -105,6 +104,7 @@
                   </tbody>
                 </table>
               </div>
+              
             </div>
           </div>
         </div>
@@ -166,6 +166,9 @@
       });
     </script>
 <script type="text/javascript">
+  $(document).ready( function () {
+    $('#jobsTable').DataTable();
+} );
         $(document).ready(function(){
           $('.delete').on('click',function(){ 
              var job_id=$(this).attr("job_id");

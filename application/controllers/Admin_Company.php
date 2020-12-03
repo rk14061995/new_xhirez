@@ -27,11 +27,16 @@ class Admin_Company extends CI_Controller
 	}
 	public function addCompany()
 	{
+		// print_r($_POST);
+		// print_r($_FILES);
+
 		if(!empty($_FILES['Incorpfile']['name']))
 	    	{   
+
+	    		$iconfigFileDeatils=pathinfo($_FILES['Incorpfile']['name']);
                 $configg['upload_path'] = 'assets/company_assets/company_Incorporation/';
                 $configg['allowed_types'] = 'jpg|jpeg|png|gif|pdf|doc|docx';
-                $configg['file_name'] = $_FILES['Incorpfile']['name'];
+                $configg['file_name'] = 'IncorProfile-'.date('d-m-y-h-i-s').'-Image.'.$iconfigFileDeatils['extension'];
                 
                 //Load upload library and initialize configuration
                 $this->load->library('upload',$configg);
@@ -51,11 +56,12 @@ class Admin_Company extends CI_Controller
                 	  $companyIncorporation = '';
                 }
 
-             if(!empty($_FILES['aoa']['name']))
+            if(!empty($_FILES['aoa']['name']))
 	    	{   
+	    		$aoaDetails=pathinfo($_FILES['aoa']['name']);
                 $configgg['upload_path'] = 'assets/company_assets/company_AOA/';
                 $configgg['allowed_types'] = 'jpg|jpeg|png|gif|pdf|doc|docx';
-                $configgg['file_name'] = $_FILES['aoa']['name'];
+                $configgg['file_name'] ='AOA-'.date('d-m-y-h-i-s').'-Image.'.$aoaDetails['extension'] ;
                 
                 //Load upload library and initialize configuration
                 $this->load->library('upload',$configgg);
@@ -68,6 +74,8 @@ class Admin_Company extends CI_Controller
                     }
                     else
                     {
+                    	$error = array('error_for_aoa' => $this->upload->display_errors());
+                    	print_r($error);
                         $company_AOA = '';
                     }
             }
@@ -76,9 +84,10 @@ class Admin_Company extends CI_Controller
                 }
            if(!empty($_FILES['moa']['name']))
 	    	{   
+	    		$moaDetails=pathinfo($_FILES['moa']['name']);
                 $configggg['upload_path'] = 'assets/company_assets/company_MOA/';
                 $configggg['allowed_types'] = 'jpg|jpeg|png|gif|pdf|doc|docx';
-                $configggg['file_name'] = $_FILES['moa']['name'];
+                $configggg['file_name'] = 'MOA-'.date('d-m-y-h-i-s').'-Image.'.$moaDetails['extension'] ;
                 
                 //Load upload library and initialize configuration
                 $this->load->library('upload',$configggg);
@@ -91,6 +100,8 @@ class Admin_Company extends CI_Controller
                     }
                     else
                     {
+                    	$error = array('error_for_moa' => $this->upload->display_errors());
+                    	print_r($error);
                         $company_MOA = '';
                     }
             }
@@ -99,9 +110,10 @@ class Admin_Company extends CI_Controller
                 }
               if(!empty($_FILES['gst']['name']))
 	    	{   
+	    		$gstDetails=pathinfo($_FILES['gst']['name']);
                 $configgggg['upload_path'] = 'assets/company_assets/company_GST/';
                 $configgggg['allowed_types'] = 'jpg|jpeg|png|gif|pdf|doc|docx';
-                $configgggg['file_name'] = $_FILES['gst']['name'];
+                $configgggg['file_name'] = 'GST-'.date('d-m-y-h-i-s').'-Image.'.$gstDetails['extension'] ;
                 
                 //Load upload library and initialize configuration
                 $this->load->library('upload',$configgggg);
@@ -114,6 +126,8 @@ class Admin_Company extends CI_Controller
                     }
                     else
                     {
+                    	$error = array('error_for_gst' => $this->upload->display_errors());
+                    	print_r($error);
                         $company_GST = '';
                     }
             }
@@ -122,9 +136,10 @@ class Admin_Company extends CI_Controller
                 }
 		 if(!empty($_FILES['file']['name']))
 	    	{   
+	    		$logoDetails=pathinfo($_FILES['file']['name']);
                 $config['upload_path'] = 'assets/companyImages/logo/';
                 $config['allowed_types'] = 'jpg|jpeg|png|gif';
-                $config['file_name'] = $_FILES['file']['name'];
+                $config['file_name'] = $this->input->post('company').'-'.date('d-m-y-h-i-s').'-Logo.'.$logoDetails['extension'] ;
                 
                 //Load upload library and initialize configuration
                 $this->load->library('upload',$config);
@@ -137,6 +152,8 @@ class Admin_Company extends CI_Controller
                     }
                     else
                     {
+                    	$error = array('error_for_logo' => $this->upload->display_errors());
+                    	print_r($error);
                         $picture = '';
                     }
             }
@@ -150,6 +167,12 @@ class Admin_Company extends CI_Controller
 					'comp_desc'=>$this->input->post('desc'),
 					'comp_address'=>$this->input->post('address'),
 					'website_url'=>$this->input->post('url'),
+					'comp_phone'=>$this->input->post('comp_phone'),
+					'comp_address'=>$this->input->post('comp_address'),
+					'country'=>$this->input->post('country'),
+					'state'=>$this->input->post('state'),
+					'city'=>$this->input->post('city'),
+					'zipcode'=>$this->input->post('zipcode'),
 					'company_email'=>$this->input->post('email'),
 					'company_reg_no'=>$this->input->post('regist'),
 					'company_pwd'=>$this->input->post('pass'),
@@ -159,18 +182,18 @@ class Admin_Company extends CI_Controller
 					'comp_gst'=>$company_GST,
 					'comp_plan_type'=>$this->input->post('Company_plans'),
 					'company_logo'=>$picture);
+					// print_r($data);
 					$results=$this->Admin_Com->addCompany($data,$company);
-					if($results==1)
-					{
-					die(json_encode(array('status'=>1,'data'=>$results)));
+					if($results==1){
+						die(json_encode(array('status'=>1,'msg'=>"Added Successfully.")));
 					}
-					else
-					{
-					die(json_encode(array('status'=>2,'data'=>$results)));
+					else if($results==2){
+						die(json_encode(array('status'=>2,'msg'=>"Already Exists.")));
+					}else{
+						die(json_encode(array('status'=>0,'msg'=>"Failed To Add.")));
 					}
 				 }
-				else
-				{
+				else{
 					die(json_encode(array('status'=>0,'data'=>'Server error')));
 				}	
 	}
@@ -565,15 +588,23 @@ class Admin_Company extends CI_Controller
 	 }
 	 public function addCompanyType()
 	{
-		$data=array('c_type_name'=>$this->input->post('Companytype'));
+		
+			
+
+		$data=array(
+						'c_type_name'=>$this->input->post('Companytype'),
+						'CompanyCurrecy'=>$this->input->post('CompanyCurrecy'),
+						'CompanyPrice'=>$this->input->post('CompanyPrice'),
+						'CompanyDesc'=>$this->input->post('Companytype')
+					);
+		// print_r($data);
+		// 	die;
 			$results=$this->Admin_Com->addCompanyType($data);
-			if($results==1)
-			{
-			die(json_encode(array('status'=>1,'data'=>$results)));
+			if($results==1){
+				die(json_encode(array('status'=>1,'data'=>$results)));
 			}
-			else
-			{
-			die(json_encode(array('status'=>2,'data'=>$results)));
+			else{
+				die(json_encode(array('status'=>2,'data'=>$results)));
 			}
 	}
 	public function DeletePlanType()

@@ -35,10 +35,10 @@
                 </ul>
               </div>
             </div>
-            <div class="card-content collapse show">
+            <div class="card-body collapse show">
               
               <div class="table-responsive">
-                <table class="table table-striped">
+                <table class="table table-striped" id="companyTable">
                   <thead>
                     <tr>
                       <th scope="col">SNo</th>
@@ -166,6 +166,9 @@
       });
     </script>
 <script type="text/javascript">
+  $(document).ready( function () {
+    $('#companyTable').DataTable();
+} );
         $(document).ready(function(){
           $('.delete').on('click',function(){ 
              var company_id=$(this).attr("company_id");

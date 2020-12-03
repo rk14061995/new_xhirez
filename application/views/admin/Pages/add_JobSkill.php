@@ -91,10 +91,10 @@
                         </ul>
                       </div>
                     </div>
-                    <div class="card-content collapse show">
+                    <div class="card-body collapse show">
                       
                       <div class="table-responsive">
-                        <table class="table table-striped">
+                        <table class="table table-striped" id="skillTable">
                           <thead>
                             <tr>
                               <th scope="col">SNo</th>
@@ -206,4 +206,7 @@ $(document).on('submit','#insert',function(e){
               
           })
         })  
+        $(document).ready( function () {
+          $('#skillTable').DataTable();
+      } );
       </script>

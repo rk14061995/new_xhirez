@@ -95,10 +95,10 @@
                 </ul>
               </div>
             </div>
-            <div class="card-content collapse show">
+            <div class="card-body collapse show">
               
               <div class="table-responsive">
-                <table class="table table-striped">
+                <table class="table table-striped" id="jobTypeTable">
                   <thead>
                     <tr>
                       <th scope="col">SNo</th>
@@ -176,6 +176,9 @@ $(document).on('submit','#insert',function(e){
 });
 </script>
 <script type="text/javascript">
+      $(document).ready( function () {
+    $('#jobTypeTable').DataTable();
+} );
         $(document).ready(function(){
           $('.delete').on('click',function(){ 
              var type_id=$(this).attr("type_id");

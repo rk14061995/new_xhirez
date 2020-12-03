@@ -24,10 +24,19 @@
     <link rel="stylesheet" type="text/css" href="<?=base_url()?>theme-assets/css/core/colors/palette-gradient.css">
     <link rel="stylesheet" type="text/css" href="<?=base_url()?>theme-assets/css/pages/dashboard-ecommerce.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+    
     <!-- END Page Level CSS-->
     <!-- BEGIN Custom CSS-->
     <!-- END Custom CSS-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    
+   <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+  <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script> 
+  <script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
   <style>
@@ -126,18 +135,22 @@
             <i class="ft-layout"></i>Skills
             </a>
           </li>
-           
-         
-           <li class=" nav-item "><a href="#" class="nav-link dropdown-toggle" >
-            <i class="ft-layout"></i><span class="menu-title" data-i18n="">Job </span>
+          <li>
+            <a href="<?=base_url('Admin_Dashboard/addJob')?>" class="nav-link " >
+            <i class="ft-layout"></i>Job
             </a>
-            <ul>
-              
-              <li> <a class="dropdown-item" href="<?=base_url('Admin_Dashboard/addJob')?>"><i class="fa fa-eye" aria-hidden="true"></i> <strong>Add</strong></a></li>
-              <li><a class="dropdown-item" href="<?=base_url('Admin_Dashboard/view_Job')?>"><i class="fa fa-plus" aria-hidden="true"></i> <strong>View</strong></a></li>
-            </ul>
-          </li> 
-           <li class=" nav-item "><a href="#" class="nav-link dropdown-toggle" >
+          </li>
+          <li>
+            <a href="<?=base_url('Admin_Dashboard/addCompany')?>" class="nav-link " >
+            <i class="ft-layout"></i>Company
+            </a>
+          </li>
+          <li>
+            <a href="<?=base_url('Admin_Dashboard/addCompanyType')?>" class="nav-link " >
+            <i class="ft-layout"></i>Plans
+            </a>
+          </li>
+           <li class=" nav-item "><a href="<?=base_url('Admin_Dashboard/addCompanyType')?>" class="nav-link dropdown-toggle" >
             <i class="ft-layout"></i><span class="menu-title" data-i18n="">Plan Type</span>
             </a>
             <ul>
@@ -146,16 +159,8 @@
               <li><a class="dropdown-item" href="<?=base_url('Admin_Dashboard/view_CompanyType')?>"><i class="fa fa-plus" aria-hidden="true"></i> <strong>View</strong></a></li>
             </ul>
           </li>
-           <li class=" nav-item "><a href="#" class="nav-link dropdown-toggle" >
-            <i class="ft-layout"></i><span class="menu-title" data-i18n="">Company </span>
-            </a>
-            <ul>
-              
-              <li> <a class="dropdown-item" href="<?=base_url('Admin_Dashboard/addCompany')?>"><i class="fa fa-eye" aria-hidden="true"></i> <strong>Add</strong></a></li>
-              <li><a class="dropdown-item" href="<?=base_url('Admin_Dashboard/viewCompany')?>"><i class="fa fa-plus" aria-hidden="true"></i> <strong>View</strong></a></li>
-            </ul>
-          </li>
-           <li class=" nav-item "><a href="#" class="nav-link dropdown-toggle" >
+           
+           <!-- <li class=" nav-item "><a href="#" class="nav-link dropdown-toggle" >
             <i class="ft-layout"></i><span class="menu-title" data-i18n="">Success Stories</span>
             </a>
             <ul>
@@ -163,8 +168,8 @@
               <li> <a class="dropdown-item" href="<?=base_url('Admin_Dashboard/addStory')?>"><i class="fa fa-eye" aria-hidden="true"></i> <strong>Add</strong></a></li>
               <li><a class="dropdown-item" href="<?=base_url('Admin_Dashboard/viewStory')?>"><i class="fa fa-plus" aria-hidden="true"></i> <strong>View</strong></a></li>
             </ul>
-          </li> 
-           <li class=" nav-item "><a href="#" class="nav-link dropdown-toggle" >
+          </li>  -->
+          <!--  <li class=" nav-item "><a href="#" class="nav-link dropdown-toggle" >
             <i class="ft-layout"></i><span class="menu-title" data-i18n="">Message</span>
             </a>
             <ul>
@@ -173,7 +178,7 @@
                <li> <a class="dropdown-item" href="<?=base_url('Admin_Dashboard/addCompanyMessage')?>"><i class="fa fa-eye" aria-hidden="true"></i> <strong>Add CompanyMsg</strong></a></li>
               <li><a class="dropdown-item" href="<?=base_url('Admin_Dashboard/addCompanyMessage')?>"><i class="fa fa-plus" aria-hidden="true"></i> <strong>View</strong></a></li>
             </ul>
-          </li> 
+          </li>  -->
           
            <li class=" nav-item "><a href="#" class="nav-link dropdown-toggle" >
           	<i class="ft-layout"></i><span class="menu-title" data-i18n="">Job Seekers</span>
@@ -191,13 +196,13 @@
               <li><a class="dropdown-item" href="<?=base_url('Admin_Dashboard/viewSeekerApps')?>"><i class="fa fa-plus" aria-hidden="true"></i> <strong>View</strong></a></li>
             </ul>
           </li>  
-          <li class=" nav-item "><a href="#" class="nav-link dropdown-toggle" >
+          <!-- <li class=" nav-item "><a href="#" class="nav-link dropdown-toggle" >
             <i class="ft-layout"></i><span class="menu-title" data-i18n="">Multiple email</span>
             </a>
             <ul>
               <li><a class="dropdown-item" href="<?=base_url('Admin_Dashboard/addMultipleMails')?>"><i class="fa fa-plus" aria-hidden="true"></i> <strong>Send</strong></a></li>
             </ul>
-          </li>
+          </li> -->
           <!-- <li class=" nav-item "><a href="#" class="nav-link dropdown-toggle" >
             <i class="ft-layout"></i><span class="menu-title" data-i18n="">Job Application</span>
             </a>
