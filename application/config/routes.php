@@ -59,9 +59,9 @@ $route['Services'] = 'Web/Services';
 $route['Contact'] = 'Web/Contact';
 $route['User-Profile'] = 'User/myProfile';
 
-$route['default_controller'] = 'web';
+$route['default_controller'] = 'Website';
  // $route['default_controller'] = 'Admin_Login/index';
-$route['default_controller'] = 'web';
+$route['default_controller'] = 'Website';
 // $route['default_controller'] = 'Admin_Login/index';
 // $route['default_controller'] = 'web';
 $route['admin'] = 'Admin_Login/index';
