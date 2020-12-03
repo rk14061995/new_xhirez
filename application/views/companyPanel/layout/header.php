@@ -20,6 +20,7 @@
 <link rel="stylesheet" href='<?=base_url("assets/css/companyadmin.css")?>'>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
 </head>
 <body>
         <section class="backPurl ">
@@ -46,16 +47,26 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">Jobs  </a>
                             <ul class="dropdown-menu dropMenu py-0">
-                                <li><a to="/company-panel/post-new-job" class="dropdown-item" >Post Jobs</a></li>
-                                <li><a to="/company-panel/post-walkin-job" class="dropdown-item" > Post Walkin Jobs</a></li>
-                                <li><a to="/company-panel/manage-jobs" class="dropdown-item" > Manage Jobs</a></li>
+                                <li>
+                                    <a href="<?=base_url("CompanyAdmin/PostNewJobs")?>" class="dropdown-item" >Post Jobs</a>
+                                </li>
+                                <li>
+                                    <a href="<?=base_url("CompanyAdmin/PostWalkInJobs")?>" class="dropdown-item" > Post Walkin Jobs</a>
+                                </li>
+                                <li>
+                                    <a href="<?=base_url("CompanyAdmin/ManageJobs")?>" class="dropdown-item" > Manage Jobs</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">Email/ SMS</a>
                             <ul class="dropdown-menu dropMenu py-0">
-                                <li><a to="/company-panel/email-template" class="dropdown-item" > New Enail Template</a></li>
-                                <li><a to="/company-panel/manage-email" class="dropdown-item" > Manage Email Template</a></li>
+                                <li>
+                                    <a href="<?=base_url("CompanyAdmin/EmailTemplate")?>" class="dropdown-item" > New Enail Template</a>
+                                </li>
+                                <li>
+                                    <a href="<?=base_url("CompanyAdmin/ManageEmails")?>" class="dropdown-item" > Manage Email Template</a>
+                                </li>
                                 <!-- {/* <li><a to="/company-panel/manage-jobs" class="dropdown-item" > Email Dashboard</a></li> */} -->
                             </ul>
                         </li>

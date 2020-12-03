@@ -26,9 +26,50 @@ function __construct(){
  		// $this->load->view('admin/Pages/index');
  		// $this->load->view('Layout/footer');
  	}
- // public function features(){
- // 		$this->load->view('companyPanel/layout/header');
- // 		$this->load->view('companyPanel/pages/home');
- // 		$this->load->view('companyPanel/layout/footer');
- // 	}
+
+ 	public function PostNewJobs(){
+ 		// print_r($this->session->userdata('login'));
+ 		$this->load->view('companyPanel/layout/header');
+ 		$this->load->view('companyPanel/pages/postNewJobs');
+ 		$this->load->view('companyPanel/layout/footer');
+ 		// $this->load->view('admin/Pages/index');
+ 		// $this->load->view('Layout/footer');
+ 	}
+
+ 	public function PostWalkInJobs(){
+ 		// print_r($this->session->userdata('login'));
+ 		$this->load->view('companyPanel/layout/header');
+ 		$this->load->view('companyPanel/pages/walkinJobs');
+ 		$this->load->view('companyPanel/layout/footer');
+ 		// $this->load->view('admin/Pages/index');
+ 		// $this->load->view('Layout/footer');
+ 	}
+
+ 	public function ManageJobs(){
+ 		// print_r($this->session->userdata('login'));
+ 		$this->load->view('companyPanel/layout/header');
+ 		$this->load->view('companyPanel/pages/manageJobs');
+ 		$this->load->view('companyPanel/layout/footer');
+ 		// $this->load->view('admin/Pages/index');
+ 		// $this->load->view('Layout/footer');
+ 	}
+
+ 	public function EmailTemplate(){
+ 		// print_r($this->session->userdata('login'));
+ 		$this->load->view('companyPanel/layout/header');
+ 		$this->load->view('companyPanel/pages/emailTemplate');
+ 		$this->load->view('companyPanel/layout/footer');
+ 		// $this->load->view('admin/Pages/index');
+ 		// $this->load->view('Layout/footer');
+ 	}
+
+	public function ManageEmails(){
+ 		// print_r($this->session->userdata('login'));
+ 		$this->load->view('companyPanel/layout/header');
+ 		$this->load->view('companyPanel/pages/manageEmails');
+ 		$this->load->view('companyPanel/layout/footer');
+ 		// $this->load->view('admin/Pages/index');
+ 		// $this->load->view('Layout/footer');
+ 	}
+
 }
