@@ -8,6 +8,7 @@
                       <div class="card">
                           <div class="card-header">
                               <h4 class="card-title">New Plan </h4>
+                              <hr>
                           </div>
 
                          
@@ -54,7 +55,12 @@
                       </div>
                   </div>
                   <div class="col-md-8">
+
                     <div class="card">
+                      <div class="card-header">
+                        <h5>Existing Plans</h5>
+                        <hr>
+                      </div>
                       
                       <div class="card-body">
                         <table class="table" id="planTable">

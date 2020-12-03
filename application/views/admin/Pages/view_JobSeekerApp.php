@@ -3,7 +3,7 @@
         <div class="content-wrapper-before"></div>
         <div class="content-header row">
           <div class="content-header-left col-md-4 col-12 mb-2">
-            <h3 class="content-header-title">View Seeker Application</h3>
+            <h3 class="content-header-title text-danger">View Seeker Application</h3>
           </div>
           <div class="content-header-right col-md-8 col-12">
             <div class="breadcrumbs-top float-md-right">
@@ -35,10 +35,10 @@
                 </ul>
               </div>
             </div>
-            <div class="card-content collapse show">
+            <div class="card-body collapse show">
               
               <div class="table-responsive refreshlocation">
-                <table class="table table-striped">
+                <table class="table table-striped" id="applicationTable">
                   <thead>
                     <tr>
                       <th scope="col">SNo</th>
@@ -173,4 +173,7 @@
               
           })
         })  
+        $(document).ready( function () {
+          $('#applicationTable').DataTable();
+      } ); 
       </script>

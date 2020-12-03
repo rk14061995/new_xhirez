@@ -38,7 +38,7 @@
             <div class="card-content collapse show">
               
               <div class="table-responsive refreshlocation">
-                <table class="table table-striped">
+                <table class="table table-striped" id="jobseekerTable">
                   <thead>
                     <tr>
                       <th scope="col">SNo</th>
@@ -197,5 +197,8 @@
               }
               
           })
-        })  
+        }) 
+        $(document).ready( function () {
+          $('#jobseekerTable').DataTable();
+      } ); 
       </script>

@@ -150,15 +150,17 @@
             <i class="ft-layout"></i>Plans
             </a>
           </li>
-           <li class=" nav-item "><a href="<?=base_url('Admin_Dashboard/addCompanyType')?>" class="nav-link dropdown-toggle" >
-            <i class="ft-layout"></i><span class="menu-title" data-i18n="">Plan Type</span>
+          <li>
+            <a href="<?=base_url('Admin_Dashboard/viewJobSeeker')?>" class="nav-link " >
+            <i class="ft-layout"></i>Job Seekers
             </a>
-            <ul>
-              
-              <li> <a class="dropdown-item" href="<?=base_url('Admin_Dashboard/addCompanyType')?>"><i class="fa fa-eye" aria-hidden="true"></i> <strong>Add</strong></a></li>
-              <li><a class="dropdown-item" href="<?=base_url('Admin_Dashboard/view_CompanyType')?>"><i class="fa fa-plus" aria-hidden="true"></i> <strong>View</strong></a></li>
-            </ul>
           </li>
+          <li>
+            <a href="<?=base_url('Admin_Dashboard/viewSeekerApps')?>" class="nav-link " >
+            <i class="ft-layout"></i>Job Applications
+            </a>
+          </li>
+           
            
            <!-- <li class=" nav-item "><a href="#" class="nav-link dropdown-toggle" >
             <i class="ft-layout"></i><span class="menu-title" data-i18n="">Success Stories</span>
@@ -180,22 +182,8 @@
             </ul>
           </li>  -->
           
-           <li class=" nav-item "><a href="#" class="nav-link dropdown-toggle" >
-          	<i class="ft-layout"></i><span class="menu-title" data-i18n="">Job Seekers</span>
-            </a>
-            <ul>
-            	
-            <!-- 	<li> <a class="dropdown-item" href="<?=base_url('Admin_Dashboard/addJobSeekerView')?>"><i class="fa fa-eye" aria-hidden="true"></i> <strong>Add</strong></a></li> -->
-              <li><a class="dropdown-item" href="<?=base_url('Admin_Dashboard/viewJobSeeker')?>"><i class="fa fa-plus" aria-hidden="true"></i> <strong>View</strong></a></li>
-            </ul>
-          </li>  
-           <li class=" nav-item "><a href="#" class="nav-link dropdown-toggle" >
-            <i class="ft-layout"></i><span class="menu-title" data-i18n="">Seekers Apps</span>
-            </a>
-            <ul>
-              <li><a class="dropdown-item" href="<?=base_url('Admin_Dashboard/viewSeekerApps')?>"><i class="fa fa-plus" aria-hidden="true"></i> <strong>View</strong></a></li>
-            </ul>
-          </li>  
+           
+          
           <!-- <li class=" nav-item "><a href="#" class="nav-link dropdown-toggle" >
             <i class="ft-layout"></i><span class="menu-title" data-i18n="">Multiple email</span>
             </a>
