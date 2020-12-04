@@ -59,71 +59,23 @@
       <div class="col-md-9">
         <div class="">
             <div class="row m-0">
-                    
-              
-              <div class="col-md-3 mt-3">
-                <div class="p-3 text-center Fnte">
-                    <div class="">
-                      <img src='<?=base_url("/assets/images/Accountancy.png")?>' class="img-fluid"/>
+                   
+              <?php foreach($categories as $cat): ?>
+
+                <div class="col-md-3 mt-3">
+                  <a href="<?=base_url('Website/jobsByCategory/').$cat['category_id']?>">
+                    <div class="p-3 text-center Fnte">
+                      <div class="">
+                        <img src='<?=base_url("/assets/category_icon/").$cat['category_icon']?>' class="img-fluid"/>
+                      </div>
+                      <h5><strong><?=$cat['category_name']?></strong></h5>
+                      <span ><?=$cat['total_jobs']?> Open Jobs</span>
                     </div>
-                    <h5><strong>Apprenticeships</strong></h5>
-                    <span >301 Open Position</span>
+                  </a>
+                  
                 </div>
-              </div>
-              <div class="col-md-3 mt-3">
-                <div class="p-3 text-center Fnte">
-                    <div class="">
-                      <img src='<?=base_url("/assets/images/Accountancy.png")?>' class="img-fluid"/>
-                    </div>
-                    <h5><strong>Banking</strong></h5>
-                    <span >301 Open Position</span>
-                </div>
-              </div>
-              <div class="col-md-3 mt-3">
-                <div class="p-3 text-center Fnte">
-                    <div class="">
-                      <img src='<?=base_url("/assets/images/Accountancy.png")?>' class="img-fluid"/>
-                    </div>
-                    <h5><strong>Education</strong></h5>
-                    <span >301 Open Position</span>
-                </div>
-              </div>
-              <div class="col-md-3 mt-3">
-                <div class="p-3 text-center Fnte">
-                    <div class="">
-                      <img src='<?=base_url("/assets/images/Accountancy.png")?>' class="img-fluid"/>
-                    </div>
-                    <h5><strong>Engineering</strong></h5>
-                    <span >301 Open Position</span>
-                </div>
-              </div>
-              <div class="col-md-3 mt-3">
-                <div class="p-3 text-center Fnte">
-                    <div class="">
-                      <img src='<?=base_url("/assets/images/Accountancy.png")?>' class="img-fluid"/>
-                    </div>
-                    <h5><strong>Estate Agency</strong></h5>
-                    <span >301 Open Position</span>
-                </div>
-              </div>
-              <div class="col-md-3 mt-3">
-                <div class="p-3 text-center Fnte">
-                    <div class="">
-                      <img src='<?=base_url("/assets/images/Accountancy.png")?>' class="img-fluid"/>
-                    </div>
-                    <h5><strong>IT & Telecoms</strong></h5>
-                    <span >301 Open Position</span>
-                </div>
-              </div>
-              <div class="col-md-3 mt-3"> 
-                 <div class="p-3 text-center Fnte">
-                    <div class="">
-                      <img src='<?=base_url("/assets/images/Accountancy.png")?>' class="img-fluid"/>
-                    </div>
-                    <h5><strong>Legal</strong></h5>
-                    <span >301 Open Position</span>
-                </div>
-              </div> 
+              <?php endforeach; ?>
+             
             </div>
         </div>
       </div>
@@ -146,44 +98,82 @@
     <section class="container py-5">
     <h4 class="mb-5">Jobs You May Be Interested In</h4>
     <div class="">
-    
+      
         <div class="row m-0">
-          <div class="col-md-6">
-            <Link >
-                <div class="row m-0">
-                    <div class="col-md-3">
-                    <div class="">
-                        <img src='<?=base_url("/assets/images/client1.png")?>' class="img-fluid"/>
-                    </div>
-                    </div>
-                    <div class="col-md-7">
-                    <div class="">
-                        
-                        <h5>Title</h5>
-                        <small class="colGry">via <span class="colBlu">company_name</span></small>
-                        <small class="colGry">Location</small>
-                        <br/>
-                       <small class="colGry">job_category</small><small class="ml-2 colBlu">job Type</small> 
-                    </div>
-                    </div>
-                    <div class="col-md-2">
-                    <div class="">
-                        <div class="border heartIcon rounded-circle p-1">
-                        <img src='<?=base_url("/assets/images/Heart.png")?>' class="img-fluid"/>
-                        </div>
-                        
-                        <div class="mt-2">
-                            <small class="colGry">
-                            <span><img src='<?=base_url("/assets/images/time-icon.png")?>' class="img-fluid"/></span> 
-                            1H ago
-                            </small>
+          <?php foreach($interest as $int_job): ?>
 
+            <?php
+              date_default_timezone_set('Asia/Kolkata');
+              $currentDate=date('Y-m-d h:i:s');
+              
+              $job_post_Date=date('Y-m-d h:i:s', strtotime($int_job->adde_on));
+
+              $date1 = new DateTime($currentDate);
+              $date2 = new DateTime($job_post_Date);
+              $interval = $date1->diff($date2);
+              // print_r($interval);
+              if($interval->d!=0){
+                $tim_=$interval->d.'/'.$interval->m.'/'.$interval->y;
+              }else if($interval->d==0 && $interval->h==0 ){
+                $tim_=$interval->i.' seconds ';
+              }else{
+                $tim_=$interval->h.' hours ';
+              }
+            ?>
+            <div class="col-md-6 my-1">
+
+              
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row ">
+                      <div class="col-md-3">
+                        <div class="">
+                          <img src='<?=base_url("/assets/images/client1.png")?>' class="img-fluid"/>
                         </div>
+                      </div>
+                      <div class="col-md-9">
+                        <div class="">
+                          <a href="<?=base_url('Website/getJobDescription/').$int_job->job_id?>">
+                            <h5><?=$int_job->job_title?></h5>
+                          </a>
+                            <small class="colGry">
+                              via 
+                              <span class="colBlu">
+                                <a href="<?=base_url('Website/getCompanyDetails/').$int_job->added_by_company_id?>"><?=$int_job->company_name?></a>
+                                
+                                
+                              </span>
+                            </small>
+                              <small class="colGry"><?=$int_job->job_location_?></small>
+                            <br/>
+                            <small class="colGry"><?=$int_job->category_name?></small><small class="ml-2 colBlu"><?=$int_job->type_name?></small> 
+                        </div>
+                        
+                        <small class="colGry float-right"><?=$tim_?> ago</small>
+                        
+                      </div>
+                      <!-- <div class="col-md-2">
+                        <div class="">
+                          <div class="border heartIcon rounded-circle p-1">
+                            <img src='<?=base_url("/assets/images/Heart.png")?>' class="img-fluid"/>
+                          </div>
+                          <div class="mt-2">
+                              <small class="colGry">
+                              <span><img src='<?=base_url("/assets/images/time-icon.png")?>' class="img-fluid"/></span> 
+                              1H ago
+                              </small>
+
+                          </div>
+                        </div>
+                      </div> -->
                     </div>
-                    </div>
+                  </div>
                 </div>
-                </Link>
+             
+              
+              
             </div>
+          <?php endforeach; ?>
         </div>
               
     </div>
@@ -192,7 +182,15 @@
   <div class="row">
     <div class="col-md-6">
       <div class="HIssqq ">
-        <h1>15030+ <span class="colBlu"> Browse Jobs</span></h1>
+        <?php
+          if(count($total_jobs)>1){
+            $jobs_Count=count($total_jobs)-1;
+          }else{
+            $jobs_Count=count($total_jobs);
+          }
+
+        ?>
+        <h1><?= $jobs_Count ?> + <span class="colBlu"> Browse Jobs</span></h1>
         <h4 class="fnt500">Search all the open positions on the web.</h4>
 
         <button class="btn bnlurrt fnt24">SEARCH JOBS</button>
