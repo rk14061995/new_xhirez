@@ -35,7 +35,7 @@
                 <div class="collapse navbar-collapse bg_white" id="navbarSupportedContent">
                     <ul class="navbar-nav company_nav company_dash mt-3">
                         <li class="nav-item ">
-                            <a to="/company-panel" class="nav-link active" href="#">Home </a>
+                            <a class="nav-link active" href="<?=base_url("CompanyAdmin/dashboard")?>">Home </a>
                         </li>
                  <!--        {/* <li class="nav-item dropdown">
                             <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown"> Find Candidates  </a>
