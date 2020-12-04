@@ -35,7 +35,7 @@
                 </ul>
               </div>
             </div>
-            <div class="card-content collapse show">
+            <div class="card-body collapse show">
               
               <div class="table-responsive refreshlocation">
                 <table class="table table-striped" id="jobseekerTable">
