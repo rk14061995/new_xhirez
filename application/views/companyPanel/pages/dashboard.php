@@ -118,8 +118,4 @@
         </div>
     </section>   
 </section> 
-            <!-- <CompanyFooter/> -->
-
-            <?php
-                include"../layout/footer.php";
-             ?>
+           
