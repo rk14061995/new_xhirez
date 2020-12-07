@@ -23,7 +23,7 @@
 <body>
 <section class="colBackLightBlue">
     <nav class="navbar navbar-expand-lg  container">
-                <a href="" class="navbar-brand W20">
+                <a href="<?=base_url()?>" class="navbar-brand W20">
                     <img src='<?= base_url("assets/images/Xhirez-Logo.png")?>' class="img-fluid w-50"/>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@
                 </button>
       
         <div class="collapse navbar-collapse bg_white" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto maiHead pl-3">
+          <!-- <ul class="navbar-nav mr-auto maiHead pl-3">
             <li class="nav-item ">
               <a href="<?=base_url()?>"  class="nav-link active" >Home </a>
             </li>
@@ -45,16 +45,16 @@
                 <a class="nav-link" href="<?=base_url('Website/features')?>">Features</a>
             </li>
       
-          </ul>
+          </ul> -->
           <div class="form-inline my-2 my-lg-0 fnt500">
-           <a href="" class="colGry ">
+           <!-- <a href="" class="colGry ">
               <img src='<?= base_url("assets/images/Login-Icon.png") ?>' class="img-fluid"/>
                 <span class="ml-2">LOGIN</span>
             </a> 
            <span class="mx-1">/</span>
            <a href="" class="colGry">
                <span class="ml-2">REGISTER</span>
-            </a>
+            </a> -->
              
           </div>
         </div>
@@ -101,7 +101,7 @@
                                             <button class="btn w-100 btnbckBlu">Create Account</button>
                                         </form>
                                         <div class="text-center mt-4">
-                                            <span class="">Already have an account? <a  href="<?=base_url('CompanyAdmin/login')?>" class="adIN"><strong>Sign In</strong></a></span>
+                                            <span class="">Already have an account? <a  href="<?=base_url('Employer-Login')?>" class="adIN"><strong>Sign In</strong></a></span>
                                         </div>
                                     </div>
                                 </div>

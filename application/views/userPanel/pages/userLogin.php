@@ -100,7 +100,7 @@
                             <button class="btn w-100 btnbckBlu" type="submit">Login to Account</button>
                         </form>
                         <div class="text-center mt-4">
-                            <span class="">Don't have an account? <a href="<?=base_url('UserPanel/register')?>" class="adIN" >
+                            <span class="">Don't have an account? <a href="<?=base_url('Employer-SignUp')?>" class="adIN" >
                                 <strong>Sign Up</strong>
                                 </a>
                             </span>

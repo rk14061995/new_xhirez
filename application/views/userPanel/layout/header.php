@@ -23,6 +23,7 @@
     <script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
 </head>
 <body>
+    
         <section class="backPurl ">
            <nav class="navbar navbar-expand-lg navbar-light paduj5">
                 <a href='/' class="navbar-brand W20">
@@ -35,7 +36,7 @@
                 <div class="collapse navbar-collapse bg_white" id="navbarSupportedContent">
                     <ul class="navbar-nav company_nav company_dash mt-3">
                         <li class="nav-item ">
-                            <a class="nav-link active" href="<?=base_url("UserPanel/dashboard")?>">Home </a>
+                            <a class="nav-link active" href="<?=base_url("Employee-Dashboard")?>">Home </a>
                         </li>
                  <!--        {/* <li class="nav-item dropdown">
                             <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown"> Find Candidates  </a>

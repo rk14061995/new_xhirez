@@ -1,31 +1,27 @@
 <?php
 class UserPanel extends CI_Controller{
-function __construct(){
-	parent::__construct();
-
-}
-
-	public function login(){
-		// print_r($this->session->userdata('login'));
-		$this->load->view('userPanel/pages/userLogin');
-		// $this->load->view('admin/Pages/index');
-		// $this->load->view('Layout/footer');
+	function __construct(){
+		parent::__construct();
+		$this->load->model('DatabaseModel','DTB');
 	}
-	public function register(){
-		// print_r($this->session->userdata('login'));
-		$this->load->view('userPanel/pages/userRegister');
-		// $this->load->view('admin/Pages/index');
-		// $this->load->view('Layout/footer');
-	}
-
 	public function dashboard(){
- 		// print_r($this->session->userdata('login'));
- 		$this->load->view('userPanel/layout/header');
+		$data['jobSeekerData']=unserialize($this->session->userdata('jobSeekerSession'));
+		$data['latest_jobs']=$this->db
+ 				->join('job_category','job_category.category_id=jobs_added.job_category')
+ 				->join('job_type','job_type.type_id=jobs_added.job_type')
+ 				->join('company_','company_.company_id=jobs_added.added_by_company_id')
+ 				->order_by('jobs_added.job_id','desc')->limit(5)->get('jobs_added')->result();
+		// print_r($data['latest_jobs']);
+
+ 		$this->load->view('userPanel/layout/header',$data);
  		$this->load->view('userPanel/pages/dashboard');
  		$this->load->view('userPanel/layout/footer');
- 		// $this->load->view('admin/Pages/index');
- 		// $this->load->view('Layout/footer');
  	}
+ 	// public function dashboard(){
+ 	// 	$this->load->view('userPanel/layout/header');
+ 	// 	$this->load->view('userPanel/pages/dashboard');
+ 	// 	$this->load->view('userPanel/layout/footer');
+ 	// }
 
 
 }

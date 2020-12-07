@@ -36,10 +36,10 @@
               <a href="<?=base_url('Website')?>" class="nav-link active" href="#">Home </a>
             </li>
             <li class="nav-item">
-              <a href="" to="for-business" class="nav-link" href="#"> Business</a>
+              <a  class="nav-link" href="<?=base_url('Employer-Login')?>"> Business</a>
             </li>
               <li class="nav-item">
-              <a href="" to="for-staffing-agencies" class="nav-link" href="#"> Staffing Agencies</a>
+              <a class="nav-link" href="<?=base_url('Agency-Login')?>"> Staffing Agencies</a>
             </li>
               <li class="nav-item">
                 <a class="nav-link" href="<?=base_url('Website/features')?>">Features</a>
@@ -47,12 +47,12 @@
       
           </ul>
           <div class="form-inline my-2 my-lg-0 fnt500">
-           <a href="<?=base_url('UserPanel/login')?>" class="colGry ">
+           <a href="<?=base_url('Employee-Login')?>" class="colGry ">
               <img src='<?= base_url("assets/images/Login-Icon.png") ?>' class="img-fluid"/>
                 <span class="ml-2">LOGIN</span>
             </a> 
            <span class="mx-1">/</span>
-           <a href="<?=base_url('UserPanel/register')?>" class="colGry">
+           <a href="<?=base_url('Employee-SignUp')?>" class="colGry">
                <span class="ml-2">REGISTER</span>
             </a>
              
