@@ -74,18 +74,24 @@
             <div class="col-md-4 ">
                 <div class="card px-4 py-5 mt-5">
                     <h3 class="mb-1 text-center">User Login</h3>
-                   <!--  <div>
-                    
-                        <div class="text-danger">{this.state.error}</div>
-                    </div> -->
+                    <div>
+                      <?php
+                          if($this->session->flashdata('msg')){
+                            echo '<div class="alert alert-info">'.$this->session->flashdata('msg').'</div>';
+                          }
+                          if($this->session->flashdata('err')){
+                            echo '<div class="alert alert-danger">'.$this->session->flashdata('err').'</div>';
+                          }
+                      ?>
+                    </div>
                     
                     <div class="mt-4">
-                        <form onSubmit={this.onSubmit} class="form" role="form" autocomplete="off">
+                        <form action ="<?=base_url('LoginController/jobseekerLogin')?>" class="form" role="form" autocomplete="off" method="post">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="email"  onChange={this.onChangeEmail} name="email" placeholder="Email or Username" required/>
+                                <input type="text" class="form-control" id="email" name="user_email" placeholder="Email or Username" required/>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" id="pass_code" onChange={this.onChangePassword} name="pass_code" placeholder="Password" required/>
+                                <input type="password" class="form-control" id="pass_code" name="pass_code" placeholder="Password" required/>
                             </div>
                             <div class="text-right my-3">
                                 <a to="recover-password-company" class="adIN"><strong>Forgot Password?</strong></a>
