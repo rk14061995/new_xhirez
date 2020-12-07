@@ -78,24 +78,24 @@
                                     <h3 class="mb-1 text-center">User Sign Up</h3>
                                     
                                     <div class="mt-4">
-                                        <form onSubmit={this.onSubmit}>
+                                        <form action="<?=base_url('LoginController/jobseekerRegistration')?>" method="post">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="" placeholder="Com Name" required/>
+                                                <input type="text" class="form-control" name="full_name" placeholder="Full Name" required/>
                                             
                                             </div>
                                             <div class="form-group">
-                                                <input type="email" class="form-control"  name="" placeholder="Email Address" required/>
+                                                <input type="email" class="form-control"  name="email_" placeholder="Email Address" required/>
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="" placeholder="Phone Number" required/>
+                                                <input type="text" class="form-control" name="phone_no" placeholder="Phone Number" required/>
                                             </div>
 
                                             <div class="form-group">
-                                                <input type="password" class="form-control" name="" placeholder="Password" required/>
+                                                <input type="password" class="form-control" name="user_pass_code" placeholder="Password" required/>
                                             </div>
-                                            <div class="form-group">
+                                            <!-- <div class="form-group">
                                                 <input type="password" class="form-control" name="" placeholder="Confirm Password" required/>
-                                            </div>
+                                            </div> -->
                                             <div class=" my-3">
                                                 <input type="checkbox"  /><small class="ml-1">Agree with<a href="" class="adIN"><strong> Terms & Condition</strong></a></small>
                                             </div>

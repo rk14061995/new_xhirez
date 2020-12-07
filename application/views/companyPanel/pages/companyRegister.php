@@ -33,7 +33,7 @@
         <div class="collapse navbar-collapse bg_white" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto maiHead pl-3">
             <li class="nav-item ">
-              <a href="" to="/home" class="nav-link active" href="#">Home </a>
+              <a href="<?=base_url()?>"  class="nav-link active" >Home </a>
             </li>
             <li class="nav-item">
               <a href="" to="for-business" class="nav-link" href="#"> Business</a>
@@ -78,24 +78,22 @@
                                     <h3 class="mb-1 text-center">Company Sign Up</h3>
                                     
                                     <div class="mt-4">
-                                        <form onSubmit={this.onSubmit}>
+                                        <form action="<?=base_url('LoginController/companyRegistration')?>" method="post">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="" placeholder="Com Name" required/>
+                                                <input type="text" class="form-control" name="comp_name" placeholder="Company Name" required/>
                                             
                                             </div>
                                             <div class="form-group">
-                                                <input type="email" class="form-control"  name="" placeholder="Email Address" required/>
+                                                <input type="email" class="form-control"  name="comp_email" placeholder="Email Address" required/>
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="" placeholder="Phone Number" required/>
+                                                <input type="text" class="form-control" name="comp_contact" placeholder="Phone Number" required/>
                                             </div>
 
                                             <div class="form-group">
-                                                <input type="password" class="form-control" name="" placeholder="Password" required/>
+                                                <input type="password" class="form-control" name="Pass_code" placeholder="*******" required/>
                                             </div>
-                                            <div class="form-group">
-                                                <input type="password" class="form-control" name="" placeholder="Confirm Password" required/>
-                                            </div>
+                                            
                                             <div class=" my-3">
                                                 <input type="checkbox"  /><small class="ml-1">Agree with<a href="" class="adIN"><strong> Terms & Condition</strong></a></small>
                                             </div>

@@ -163,6 +163,7 @@ class Admin_Company extends CI_Controller
                  if(!empty($uploadData))
 		         {
 		         	$company=$this->input->post('company');
+		         	$pwdEncyt=$this->encryption->encrypt(trim($this->input->post('pass')));
 					$data=array('company_name'=>$company,
 					'comp_desc'=>$this->input->post('desc'),
 					'comp_address'=>$this->input->post('address'),
@@ -175,7 +176,7 @@ class Admin_Company extends CI_Controller
 					'zipcode'=>$this->input->post('zipcode'),
 					'company_email'=>$this->input->post('email'),
 					'company_reg_no'=>$this->input->post('regist'),
-					'company_pwd'=>$this->input->post('pass'),
+					'company_pwd'=>$pwdEncyt,
 					'comp_incorporation'=>$companyIncorporation,
 					'comp_aoa'=>$company_AOA,
 					'comp_moa'=>$company_MOA,
