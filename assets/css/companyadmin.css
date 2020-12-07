@@ -321,6 +321,7 @@
   color: white;
   
 }
+.ntns:focus{border:none}
 .UYhu h5, .UYhu h4{
   color: #333333;
   margin: 30px 0px !important;

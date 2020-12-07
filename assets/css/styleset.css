@@ -406,6 +406,39 @@ body {
   .BgcGry{
     background: #8080801c;
   }
+.lightBTn{
+  display: inline-block;
+  padding: 6px 16px;
+    border-radius: 3px;
+    border: 2px solid transparent;
+    color: brown !important;
+    font-weight: 500;
+    background: #f7f7f7;
+    font-size: 13px;
+    box-shadow: 1px 3px 6px 0px #d6d6d6;
+}
+.darkBtn{
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 3px;
+  border: 2px solid transparent;
+  color: white !important;
+  font-weight: 500;
+  background: brown;
+  font-size: 13px;
+  box-shadow: 1px 3px 6px 0px #d6d6d6;
+}
+.lightBTn:hover{
+  
+  box-shadow: 1px 3px 6px 2px #d6d6d6;
+}
+.darkBtn:hover{
+  color: brown !important;
+  background: white;
+}
+button:focus{
+  border:none;
+}
   @media only screen and (max-width:768px){
     .margtp {
         margin-top: 0px;
