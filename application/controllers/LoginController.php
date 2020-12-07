@@ -119,11 +119,12 @@
 		// die;
 		$pwd=trim($this->input->post('pass_code'));
 		if(count($res)>0){
-			echo ' Password: '.$password=$res[0]->company_pwd;
-			echo ' Decrypt: '.$decryptPwd=$this->encryption->decrypt($password);
+			$password=$res[0]->company_pwd;
+			$decryptPwd=$this->encryption->decrypt($password);
 			if($decryptPwd==$pwd){
-				echo 'Password Matched.';
+				echo 'Password Matched.'; 
 				$this->session->set_userdata('companySession',serialize($res));
+				redirect('Employee-Dashboard');
 			}else{
 				echo 'Password Not Match.';
 				$this->session->set_flashdata('err','Invalid Password');

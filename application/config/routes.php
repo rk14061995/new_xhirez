@@ -75,6 +75,8 @@ $route['translate_uri_dashes'] = FALSE;
 //Company Routes
 	$route['Employer-Login'] = 'LoginController/companyLoginPage';
 	$route['Employer-SignUp'] = 'LoginController/companyRegistrationPage';
+	$route['Employer-Dashboard'] = 'CompanyAdmin/dashboard';
+	$route['Employer-Post-Job'] = 'CompanyAdmin/PostNewJobs';
 //Company Routes
 	$route['Agency-Login'] = 'LoginController/companyLoginPage';
 	$route['Agency-SignUp'] = 'LoginController/companyRegistrationPage';

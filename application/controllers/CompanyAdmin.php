@@ -5,35 +5,19 @@ function __construct(){
 
 }
 
-	public function login(){
-		// print_r($this->session->userdata('login'));
-		$this->load->view('companyPanel/pages/companyLogin');
-		// $this->load->view('admin/Pages/index');
-		// $this->load->view('Layout/footer');
-	}
-	public function register(){
-		// print_r($this->session->userdata('login'));
-		$this->load->view('companyPanel/pages/companyRegister');
-		// $this->load->view('admin/Pages/index');
-		// $this->load->view('Layout/footer');
-	}
 
 	public function dashboard(){
  		// print_r($this->session->userdata('login'));
- 		$this->load->view('companyPanel/layout/header');
+ 		$data['companySession']=unserialize($this->session->userdata('companySession'));
+ 		$this->load->view('companyPanel/layout/header',$data);
  		$this->load->view('companyPanel/pages/dashboard');
  		$this->load->view('companyPanel/layout/footer');
- 		// $this->load->view('admin/Pages/index');
- 		// $this->load->view('Layout/footer');
  	}
 
  	public function PostNewJobs(){
- 		// print_r($this->session->userdata('login'));
  		$this->load->view('companyPanel/layout/header');
  		$this->load->view('companyPanel/pages/postNewJobs');
  		$this->load->view('companyPanel/layout/footer');
- 		// $this->load->view('admin/Pages/index');
- 		// $this->load->view('Layout/footer');
  	}
 
  	public function PostWalkInJobs(){
