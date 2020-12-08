@@ -17,11 +17,11 @@ class UserPanel extends CI_Controller{
  		$this->load->view('userPanel/pages/dashboard');
  		$this->load->view('userPanel/layout/footer');
  	}
- 	// public function dashboard(){
- 	// 	$this->load->view('userPanel/layout/header');
- 	// 	$this->load->view('userPanel/pages/dashboard');
- 	// 	$this->load->view('userPanel/layout/footer');
- 	// }
+ 	public function changePassword(){
+ 		$this->load->view('userPanel/layout/header');
+ 		$this->load->view('userPanel/pages/changePassword');
+ 		$this->load->view('userPanel/layout/footer');
+ 	}
 
 
 }

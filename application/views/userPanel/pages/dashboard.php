@@ -30,15 +30,45 @@
                     <div class="d-flex pb-3">
                         <div class="">
                             <div class="piusa">
-                                U
+                               
+                                <?php echo substr($jobSeekerData[0]->fullname,0,1) ?>
                             </div>
                         </div>
 
-                        <div class="portDFO">
+                        <div class="portDFO ">
                             <h5 class="mb-0"><?=ucwords($jobSeekerData[0]->fullname)?></h5>
-                            <small><?=ucfirst($jobSeekerData[0]->basic_introduction)?></small>
+                            <div class="">
+                                <div class="position-relative">
+                                    <small><?=ucfirst($jobSeekerData[0]->basic_introduction)?></small>
+                                   <?php 
+                                    if($jobSeekerData[0]->basic_introduction){ ?>
+                                        <span title="Update Information" class="pointer infoIcon"><i class="fas fa-edit"></i> </span>
+                                    <?php }
+                                    ?>
+                                </div>
+                                <form class="basicInfo mt-2">
+                                    <div class="">
+                                        <textarea class="form-control" rows="2"></textarea>
+                                    </div>
+                                    <div class="mt-1 text-right">
+                                        <button class="darkBtn fnt12 mr-2 cancelInfo" type="button" >Cancel</button>
+                                        <button class="darkBtn fnt12 ">Update</button>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                            
                         </div>
+                        
                     </div>
+                    <script>
+                        $(document).on("click",".infoIcon",function(){
+                            $(".basicInfo").slideToggle();
+                        })
+                        $(document).on("click",".cancelInfo",function(){
+                            $(".basicInfo").slideToggle();
+                        })
+                    </script>
                     <div class="portDFO ml-0 pb-3 ">
                         <h6 class="mb-0">Skills</h6>
                         <small>HTML, Bootstrap, jquery</small>
@@ -66,7 +96,7 @@
                     </div>
                     <div class=" ml-0 py-3 ">
                        <a class="lightBTn">Yes, Update</a>
-                       <a class="ml-2 lightBTn">Upload Resume</a>
+                       <a class="ml-2 lightBTn" data-toggle="modal" data-target="#resumeModal" >Upload Resume</a>
                     </div>
                    <div class="ml-0 pt-3 border-top">
                         <p class="font12 mb-3">Build impressive resume instantly with ready to use templates.</p>
@@ -93,7 +123,10 @@
                                 <div class="JObsList">
                                     <div class="dsp_P">
                                         <a href=""><h6>Name </h6></a>
-                                        <small>date</small>
+                                        <div class="">
+                                            <span class="mr-4 bookmarkIcon pointer"><i class="fas fa-bookmark"></i></span>
+                                            <small>date</small>
+                                        </div>
                                     </div>
                                     <div class="">
                                         <small>Company Name </small>
@@ -115,7 +148,10 @@
                                 
                                     <div class="bottom_btn">
                                         <small><strong>Skills : </strong>c, communication, cognitive assessment, communication skills, boost c</small>
-                                        <button class=" darkBtn">Apply on website</button>
+                                        <div class="">
+                                            <button class=" darkBtn">Apply </button>
+                                            <button class=" darkBtn ml-2">Apply on website</button>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="JObsList">
@@ -203,7 +239,10 @@
                                 
                                     <div class="bottom_btn">
                                         <small><strong>Skills : </strong>c, communication, cognitive assessment, communication skills, boost c</small>
-                                        <button class=" darkBtn">Apply on website</button>
+                                        <div class="">
+                                            <button class=" darkBtn">Apply </button>
+                                            <button class=" darkBtn ml-2">Apply on website</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -281,7 +320,11 @@
                                     <div class="JObsList">
                                         <div class="dsp_P">
                                             <a href=""><h6><?=ucwords($l_job->job_title)?> </h6></a>
-                                            <small><?=date('d-m-Y',strtotime($l_job->adde_on))?></small>
+                                            <div class="">
+                                                <span class="mr-4 bookmarkIcon pointer"><i class="fas fa-bookmark"></i></span>
+                                                <small><?=date('d-m-Y',strtotime($l_job->adde_on))?></small>
+                                            </div>
+                                            
                                         </div>
                                         <div class="">
                                             <small><?=ucwords($l_job->company_name)?></small>
@@ -321,7 +364,10 @@
                                     
                                         <div class="bottom_btn">
                                             <small><strong>Skills : </strong>c, communication, cognitive assessment, communication skills, boost c</small>
-                                            <button class=" darkBtn">Apply on website</button>
+                                            <div class="">
+                                                <button class=" darkBtn">Apply </button>
+                                                <button class=" darkBtn ml-2">Apply on website</button>
+                                            </div>
                                         </div>
                                     </div>
                                 <?php endforeach; ?>
@@ -456,149 +502,32 @@
 </section>
 
     <style>
-        .JObsList h6{
-            margin-bottom:0px;
-        }
-        .typeBorder{
-            border: 1px solid #dee2e6;
-            padding-top: 10px;
-        }
-         .jobtsType{
-            
-            flex: .2 1 auto !important;
-        }
-        .jobtsType:hover{
-            border-color: transparent !important;
-            color: brown !important;
-          
-        }
-        .details_jon{
-            display: flex;
-            margin: 8px 0px;
-            padding-left: 1rem!important;
-        }
-        .details_jon .osl{
-            margin-left: 3rem;
-        }
-        .bottom_btn{
-            padding-top: 7px;
-            border-top: 1px solid;
-            margin-top: 8px;
-            display: flex;
-            justify-content: space-between;
-        }
-        .JObsList{
-            margin-top: 15px;
-            border: 1px solid #80808059;
-            padding: 20px;
-        }
-        .bgAzure{
-            background: azure;
-        }
-        .font12{
-            font-size:12px
-        }
-        .progtext{
-            color: #5f5f5f;
-            font-weight: 600;
-            font-size: 12px;
-            margin-bottom: 3px;
-        }
-        .poor{
-            color: #f4a65f !important;
-        }
-        .proGressBack{
-            background: #8080803b;
-            height: 4px;
-            border-radius: 5px;
-            width: 100%;
-        }
-        .ProgRess{
-            background: #f4a65f;
-            height: 4px;
-            border-radius: 5px;
-            
-        }
-        .portDFO h6{
-            color: #5f5f5f;
-            font-weight:600;   
-            font-size: 14px;
-        }
-        .portDFO h5{
-            color: #5f5f5f;
-            font-weight: 600;
-            font-size: 16px;
-        }
-        .proFIle{
-            box-shadow: 0px 0px 5px 1px gainsboro;
-            padding: 24px;
-        }
-        .piusa{
-            height: 45px;
-            width: 45px;
-            color: white;
-            background: #aa68e7;
-            font-size: 24px;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .portDFO{
-            margin-left: 10px;
-            line-height: .8;
-        }
-        .INpou{
-            border-radius: 0px;
-        }
-        .INpou:focus{
-            outline: none;
-            box-shadow: none;
-        }
-        
-        .backG{
-            background: #f7f7f7;
-        }
-        .seaHDi{
-            padding:28px 0px;
-        
-        }
-        .SearchBar{
-            display: flex;
-        }
-        .SearchBar .searchSkil{
-            width:43%;
-        }   
-        .SearchBar .searchLo{
-            width:26%;
-        }
-        .SearchBar .searchbtn {
-            width:5%;
-        }
-        .searchbtn button{
-            width:100%;
-            padding: 7px;
-            background: brown;
-            color: white;
-            border: none;
-        }
-        @media only screen and ( max-width:770px){
-            .details_jon{
-                display: block;
-                margin: 8px 0px;
-            }
-            .bottom_btn{
-                padding-top: 7px;
-                border-top: 1px solid;
-                margin-top: 8px;
-                display: block;
-                justify-content: space-between;
-            }
-            .bottom_btn button {
-                margin-top: 5px;
-            }
-            .details_jon .osl{
-                margin-left: 0rem;
-            }
-        }
+      
     </style>
+<div class="modal fade" id="resumeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <h4 class="modal-title" id="exampleModalLabel">Upload Resume</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="">
+            <form action="text-center">
+                <div class="form-group">
+                    <label class="btn-default pointer" for="resumeupload"> <img src="<?=base_url('assets/images/resume.png')?>" class="img-fluid"> <small>Click here to  upload resume</small> </label>
+                        <input id="resumeupload" type="file" name="resume" class="d-none">
+                   
+                </div>
+                <div class="">
+                    <button class=" darkBtn w-100">Upload</button> 
+                </div>
+            </form>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+</div>

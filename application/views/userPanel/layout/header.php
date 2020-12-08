@@ -36,7 +36,16 @@
                 <div class="collapse navbar-collapse bg_white" id="navbarSupportedContent">
                     <ul class="navbar-nav company_nav company_dash mt-3">
                         <li class="nav-item ">
-                            <a class="nav-link active" href="<?=base_url("Employee-Dashboard")?>">Home </a>
+                            <a class="nav-link active" href="<?=base_url("Employee-Dashboard")?>">Search Jobs </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link active" href="<?=base_url("Employee-Dashboard")?>">My Bookmarks </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link active" href="<?=base_url("Employee-Dashboard")?>">My Alerts </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link active" href="<?=base_url("Employee-Dashboard")?>">Shine Premium </a>
                         </li>
                  <!--        {/* <li class="nav-item dropdown">
                             <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown"> Find Candidates  </a>
@@ -45,17 +54,20 @@
                                 <li><a class="dropdown-item" href="#"> Manage Search</a></li>
                             </ul>
                         </li> */} -->
-                        <li class="nav-item dropdown">
+                        <!-- <li class="nav-item dropdown">
                             <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">Jobs  </a>
                             <ul class="dropdown-menu dropMenu py-0">
                                 <li>
-                                    <a href="<?=base_url("CompanyAdmin/PostNewJobs")?>" class="dropdown-item" >Post Jobs</a>
+                                    <a href="<?=base_url("")?>" class="dropdown-item" >Search Jobs</a>
                                 </li>
                                 <li>
-                                    <a href="<?=base_url("CompanyAdmin/PostWalkInJobs")?>" class="dropdown-item" > Post Walkin Jobs</a>
+                                    <a href="<?=base_url("")?>" class="dropdown-item" >My Bookmarks</a>
                                 </li>
                                 <li>
-                                    <a href="<?=base_url("CompanyAdmin/ManageJobs")?>" class="dropdown-item" > Manage Jobs</a>
+                                    <a href="<?=base_url("")?>" class="dropdown-item" >My Alerts</a>
+                                </li>
+                                <li>
+                                    <a href="<?=base_url("")?>" class="dropdown-item" > Manage Jobs</a>
                                 </li>
                             </ul>
                         </li>
@@ -68,9 +80,9 @@
                                 <li>
                                     <a href="<?=base_url("CompanyAdmin/ManageEmails")?>" class="dropdown-item" > Manage Email Template</a>
                                 </li>
-                                <!-- {/* <li><a to="/company-panel/manage-jobs" class="dropdown-item" > Email Dashboard</a></li> */} -->
+                              
                             </ul>
-                        </li>
+                        </li> -->
                     </ul>
                     <div class="ml-auto mt-3">
                         <ul class=" ">
