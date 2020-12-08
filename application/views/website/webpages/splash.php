@@ -32,7 +32,7 @@
                         <div class="py-4">
                             <a href="<?=base_url('Website/home')?>" to="home" class="mt-2 font20 btn_tras btn ">I am Looking to Hire</a>
 
-                            <a href="<?=base_url('CompanyAdmin/login')?>" to="company-login" class="mt-2 font20 btn_tras btn ml-3">I am ready to Recruit</a>
+                            <a href="<?=base_url('Employer-Login')?>" to="company-login" class="mt-2 font20 btn_tras btn ml-3">I am ready to Recruit</a>
                         </div>
                         <div class="mt-3">
                             <a href="" to="home" class="btn btnbckBlu w-100">LETS STARTED</a>

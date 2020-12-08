@@ -103,7 +103,7 @@
                                             <button class="btn w-100 btnbckBlu">Create Account</button>
                                         </form>
                                         <div class="text-center mt-4">
-                                            <span class="">Already have an account? <a  href="<?=base_url('UserPanel/login')?>" class="adIN"><strong>Sign In</strong></a></span>
+                                            <span class="">Already have an account? <a  href="<?=base_url('Employee-Login')?>" class="adIN"><strong>Sign In</strong></a></span>
                                         </div>
                                     </div>
                                 </div>

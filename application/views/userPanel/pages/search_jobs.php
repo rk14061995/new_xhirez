@@ -33,10 +33,9 @@
                                 U
                             </div>
                         </div>
-
                         <div class="portDFO">
-                            <h5 class="mb-0"><?=ucwords($jobSeekerData[0]->fullname)?></h5>
-                            <small><?=ucfirst($jobSeekerData[0]->basic_introduction)?></small>
+                            <h5 class="mb-0">UserName</h5>
+                            <small>MCA good knowledge about big data and basic c</small>
                         </div>
                     </div>
                     <div class="portDFO ml-0 pb-3 ">
@@ -78,7 +77,7 @@
             </div>
         </div>
         <div class="col-md-8">
-            <div class="row " id="pre_view_">
+            <div class="">
                 <div class="col-md-12">
                     <nav>
                         <div class="nav nav-tabs nav-fill typeBorder" id="nav-tab" role="tablist">
@@ -270,191 +269,11 @@
                         </div>
                     </div>
                 </div>            
-            </div>
-            <div class="row" id="job_search">
-                <div class="col-md-12">
-                    
-                    <div class="tab-content mt-2" id="nav-tabContent">
-                        <div class="tab-pane fade show active" id="nav-hom0e" role="tabpanel" aria-labelledby="nav-home-tab">
-                            <div class="">
-                                <?php foreach($latest_jobs as $l_job): ?>
-                                    <div class="JObsList">
-                                        <div class="dsp_P">
-                                            <a href=""><h6><?=ucwords($l_job->job_title)?> </h6></a>
-                                            <small><?=date('d-m-Y',strtotime($l_job->adde_on))?></small>
-                                        </div>
-                                        <div class="">
-                                            <small><?=ucwords($l_job->company_name)?></small>
-                                            <ul class="details_jon">
-                                                <li>
-                                                    <small><?=$l_job->min_work_exp.' to '.$l_job->max_work_exp.' years'?></small>
-                                                </li>
-                                                <li class="osl">
-                                                    <small><?=ucwords($l_job->job_location_)?></small>
-                                                </li>
-                                                <li class="osl">
-                                                    <small>
-                                                        <?php
-                                                        $ug_=$l_job->ug_qualification;
-                                                        $pg_=$l_job->pg_qualification;
-                                                        $phd_=$l_job->phd_qualification;
-                                                       // if($ug_=='NA' || $ug_==''){
-                                                       //      $ug_='';
-                                                       // }
-                                                       // if($pg_=='NA' || $pg_==''){
-                                                       //      $pg_='';
-                                                       // }
-                                                       // if($phd_=='NA' || $phd_==''){
-                                                       //      $phd_='';
-                                                       // }
-                                                       echo 'UG: '.$ug_.' | '.'PG: '.$pg_.' | '.'PHD: '.$phd_;
-                                                        ?>
-                                                           
 
-                                                        </small>
-                                                </li>
-                                            </ul>
-                                            <small class="">
-                                                Key skills: C/ C++certification, deep development knowledge, good communication skills, self motivated, goal driven
-                                            </small>
-                                        </div>
-                                    
-                                        <div class="bottom_btn">
-                                            <small><strong>Skills : </strong>c, communication, cognitive assessment, communication skills, boost c</small>
-                                            <button class=" darkBtn">Apply on website</button>
-                                        </div>
-                                    </div>
-                                <?php endforeach; ?>
-                                
-                            </div>
-                        </div>
-                        <!-- <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                            <div class="">
-                                <div class="JObsList">
-                                    <div class="dsp_P">
-                                        <a href=""><h6>Name </h6></a>
-                                        <small>date</small>
-                                    </div>
-                                    <div class="">
-                                        <small>Company Name </small>
-                                        <ul class="details_jon">
-                                            <li>
-                                                <small>1 to 3 years</small>
-                                            </li>
-                                            <li class="osl">
-                                                <small>Location</small>
-                                            </li>
-                                            <li class="osl">
-                                                <small>Qualification</small>
-                                            </li>
-                                        </ul>
-                                        <small class="">
-                                            Key skills: C/ C++certification, deep development knowledge, good communication skills, self motivated, goal driven
-                                        </small>
-                                    </div>
-                                
-                                    <div class="bottom_btn">
-                                        <small><strong>Skills : </strong>c, communication, cognitive assessment, communication skills, boost c</small>
-                                        <button class=" darkBtn">Apply on website</button>
-                                    </div>
-                                </div>
-                                <div class="JObsList">
-                                    <div class="dsp_P">
-                                        <a href=""><h6>Name </h6></a>
-                                        <small>date</small>
-                                    </div>
-                                    <div class="">
-                                        <small>Company Name </small>
-                                        <ul class="details_jon ">
-                                            <li>
-                                                <small>1 to 3 years</small>
-                                            </li>
-                                            <li class="osl">
-                                                <small>Location</small>
-                                            </li>
-                                            <li class="osl">
-                                                <small>Qualification</small>
-                                            </li>
-                                        </ul>
-                                        <small class="">
-                                            Key skills: C/ C++certification, deep development knowledge, good communication skills, self motivated, goal driven
-                                        </small>
-                                    </div>
-                                
-                                    <div class="bottom_btn">
-                                        <small><strong>Skills : </strong>c, communication, cognitive assessment, communication skills, boost c</small>
-                                        <button class=" darkBtn">Apply on website</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                            <div class="">
-                                <div class="JObsList">
-                                    <div class="dsp_P">
-                                        <a href=""><h6>Name </h6></a>
-                                        <small>date</small>
-                                    </div>
-                                    <div class="">
-                                        <small>Company Name </small>
-                                        <ul class="details_jon">
-                                            <li>
-                                                <small>1 to 3 years</small>
-                                            </li>
-                                            <li class="osl">
-                                                <small>Location</small>
-                                            </li>
-                                            <li class="osl">
-                                                <small>Qualification</small>
-                                            </li>
-                                        </ul>
-                                        <small class="">
-                                            Key skills: C/ C++certification, deep development knowledge, good communication skills, self motivated, goal driven
-                                        </small>
-                                    </div>
-                                
-                                    <div class="bottom_btn">
-                                        <small><strong>Skills : </strong>c, communication, cognitive assessment, communication skills, boost c</small>
-                                        <button class=" darkBtn">Apply on website</button>
-                                    </div>
-                                </div>
-                                <div class="JObsList">
-                                    <div class="dsp_P">
-                                        <a href=""><h6>Name </h6></a>
-                                        <small>date</small>
-                                    </div>
-                                    <div class="">
-                                        <small>Company Name </small>
-                                        <ul class="details_jon ">
-                                            <li>
-                                                <small>1 to 3 years</small>
-                                            </li>
-                                            <li class="osl">
-                                                <small>Location</small>
-                                            </li>
-                                            <li class="osl">
-                                                <small>Qualification</small>
-                                            </li>
-                                        </ul>
-                                        <small class="">
-                                            Key skills: C/ C++certification, deep development knowledge, good communication skills, self motivated, goal driven
-                                        </small>
-                                    </div>
-                                
-                                    <div class="bottom_btn">
-                                        <small><strong>Skills : </strong>c, communication, cognitive assessment, communication skills, boost c</small>
-                                        <button class=" darkBtn">Apply on website</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-                    </div>
-                </div>            
             </div>
         </div>
     </div>
 </section>
-
     <style>
         .JObsList h6{
             margin-bottom:0px;

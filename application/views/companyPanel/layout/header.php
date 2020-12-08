@@ -48,7 +48,7 @@
                             <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">Jobs  </a>
                             <ul class="dropdown-menu dropMenu py-0">
                                 <li>
-                                    <a href="<?=base_url("CompanyAdmin/PostNewJobs")?>" class="dropdown-item" >Post Jobs</a>
+                                    <a href="<?=base_url('Employer-Post-Job')?>" class="dropdown-item" >Post Jobs</a>
                                 </li>
                                 <li>
                                     <a href="<?=base_url("CompanyAdmin/PostWalkInJobs")?>" class="dropdown-item" > Post Walkin Jobs</a>

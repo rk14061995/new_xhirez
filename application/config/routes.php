@@ -68,7 +68,18 @@ $route['admin'] = 'Admin_Login/index';
 $route['Login-Page'] = 'Admin_Login/index';
 $route['404_override'] = 'PropertTrack/error404';
 $route['translate_uri_dashes'] = FALSE;
-
+//Job Seeker Routes
+	$route['Employee-Login'] = 'LoginController/jobseekerloginPage';
+	$route['Employee-SignUp'] = 'LoginController/jobseekerRegistrationPage'; 
+	$route['Employee-Dashboard'] = 'UserPanel/dashboard';
+//Company Routes
+	$route['Employer-Login'] = 'LoginController/companyLoginPage';
+	$route['Employer-SignUp'] = 'LoginController/companyRegistrationPage';
+	$route['Employer-Dashboard'] = 'CompanyAdmin/dashboard';
+	$route['Employer-Post-Job'] = 'CompanyAdmin/PostNewJobs';
+//Company Routes
+	$route['Agency-Login'] = 'LoginController/companyLoginPage';
+	$route['Agency-SignUp'] = 'LoginController/companyRegistrationPage';
 // ----------API-------------
 
 $route['jobPosted'] = 'Admin_Job/addJobPosted';
