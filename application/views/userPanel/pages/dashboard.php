@@ -274,6 +274,7 @@
         </div>
     </div>
 </section>
+
     <style>
         .JObsList h6{
             margin-bottom:0px;
