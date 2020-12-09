@@ -31,7 +31,7 @@
                         <div class="">
                             <div class="piusa">
                                
-                                <?php echo substr($jobSeekerData[0]->fullname,0,1) ?>
+                                <?php echo ucfirst(substr($jobSeekerData[0]->fullname,0,1)) ?>
                             </div>
                         </div>
 
@@ -46,9 +46,9 @@
                                     <?php }
                                     ?>
                                 </div>
-                                <form class="basicInfo mt-2">
+                                <form class="basicInfo mt-2" id="updateBio">
                                     <div class="">
-                                        <textarea class="form-control" rows="2"></textarea>
+                                        <textarea class="form-control" name="emp_bio" style="font-size: 11px" rows="10"><?=ucfirst($jobSeekerData[0]->basic_introduction)?></textarea>
                                     </div>
                                     <div class="mt-1 text-right">
                                         <button class="darkBtn fnt12 mr-2 cancelInfo" type="button" >Cancel</button>
@@ -62,6 +62,21 @@
                         
                     </div>
                     <script>
+                        $(document).on('submit','#updateBio',function(e){
+                            e.preventDefault();
+                            var formData = new FormData ($(this)[0]);
+                            $.ajax({
+                                url:"<?=base_url('Employee-Update-Bio')?>",
+                                type:"post",
+                                cache:false,
+                                contentType:false,
+                                processData:false,
+                                data:formData,
+                                success:function(response){
+
+                                }
+                            })
+                        });
                         $(document).on("click",".infoIcon",function(){
                             $(".basicInfo").slideToggle();
                         })

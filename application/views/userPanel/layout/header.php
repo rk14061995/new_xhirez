@@ -94,8 +94,8 @@
                                 <li><a class="dropdown-item" href="#"> My Contact Details</a></li>
                                     <li><a to="" class="dropdown-item" > My Recent Jobs</a></li>
                                     <li><a to="" class="dropdown-item" > My Recent Searches</a></li>
-                                    <li><a to="" class="dropdown-item" > Change Password</a></li>
-                                    <li><a to="" class="dropdown-item" > Logout</a></li>
+                                    <li><a href="<?=base_url('Employee-Change-Password')?>" class="dropdown-item" > Change Password</a></li>
+                                    <li><a href="<?=base_url('Employee-Log-out')?>" class="dropdown-item" > Logout</a></li>
                                 </ul>
                             </li>
                         </ul>

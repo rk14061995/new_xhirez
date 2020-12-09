@@ -15,12 +15,49 @@
  	public  function jobseekerloginPage(){
  		$this->load->view('userPanel/pages/userLogin');
  	}
+ 	public function jobseekerLogin(){
+ 		// print_r($_POST);
+ 		$condition=array("email"=>$this->input->post('user_email'));
+		$res=$this->DTB->getData('user_',$condition);
+		$pwd=trim($this->input->post('pass_code'));
+		if(count($res)>0){
+			$password=$res[0]->password;
+			$decryptPwd=$this->encryption->decrypt($password);
+			if($decryptPwd==$pwd){
+				echo 'Password Matched.';
+				$this->session->set_userdata('jobSeekerSession',serialize($res));
+				redirect('Employee-Dashboard');
+			}else{
+				echo 'Password Not Match.';
+				$this->session->set_flashdata('err','Invalid Password');
+				redirect('Employee-Login');
+			}
+		}else{
+			echo 'Email Id Not Found.';
+			$this->session->set_flashdata('err','Invalid Email Id');
+			redirect('Employee-Login');
+		}
+ 	}
+ 	public  function jobseekerlogout(){
+ 		if($this->session->userdata('jobSeekerSession')){
+ 			$this->session->unset_userdata('jobSeekerSession');
+ 			// $this->session->sess_destroy();
+ 		}
+ 		redirect('Employee-Login');
+ 	}
  	public function jobseekerRegistrationPage(){
  		$this->load->view('userPanel/pages/userRegister');
  	}
  	public function companyLoginPage(){
 		$this->load->view('companyPanel/pages/companyLogin');
 	}
+	public  function companylogout(){
+ 		if($this->session->userdata('companySession')){
+ 			$this->session->unset_userdata('companySession');
+ 			// $this->session->sess_destroy();
+ 		}
+ 		redirect('Employee-Login');
+ 	}
 	public function companyRegistrationPage(){
 		$this->load->view('companyPanel/pages/companyRegister');
 	}
@@ -56,29 +93,7 @@
  		}
  		redirect('Employee-Login');
  	}
- 	public function jobseekerLogin(){
- 		// print_r($_POST);
- 		$condition=array("email"=>$this->input->post('user_email'));
-		$res=$this->DTB->getData('user_',$condition);
-		$pwd=trim($this->input->post('pass_code'));
-		if(count($res)>0){
-			$password=$res[0]->password;
-			$decryptPwd=$this->encryption->decrypt($password);
-			if($decryptPwd==$pwd){
-				echo 'Password Matched.';
-				$this->session->set_userdata('jobSeekerSession',serialize($res));
-				redirect('Employee-Dashboard');
-			}else{
-				echo 'Password Not Match.';
-				$this->session->set_flashdata('err','Invalid Password');
-				redirect('Employee-Login');
-			}
-		}else{
-			echo 'Email Id Not Found.';
-			$this->session->set_flashdata('err','Invalid Email Id');
-			redirect('Employee-Login');
-		}
- 	}
+ 	
  	public function companyRegistration(){
  		$pwdEncyt=$this->encryption->encrypt(trim($_POST['Pass_code']));
  		$companyData=array(

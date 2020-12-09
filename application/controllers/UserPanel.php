@@ -22,6 +22,13 @@ class UserPanel extends CI_Controller{
  		$this->load->view('userPanel/pages/changePassword');
  		$this->load->view('userPanel/layout/footer');
  	}
+ 	public function updateBio(){
+ 		print_r($_POST);
+ 		$toUpdate=array("basic_introduction"=>$this->input->post('emp_bio'));
+ 		if($this->DTB->updateReacord($table_name,$toUpdate,$condition)){
+
+ 		}
+ 	}
 
 
 }

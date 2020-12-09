@@ -26,6 +26,13 @@
 				return 2;
 			}
 		}
+		public function updateReacord($table_name,$toUpdate){
+			if($this->db->update($table_name,$toUpdate)){
+				return true;
+			}else{
+				return false;
+			}
+		}
 	}
 
 
