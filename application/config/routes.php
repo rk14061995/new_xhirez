@@ -73,6 +73,9 @@ $route['translate_uri_dashes'] = FALSE;
 	$route['Employee-SignUp'] = 'LoginController/jobseekerRegistrationPage'; 
 	$route['Employee-Dashboard'] = 'UserPanel/dashboard';
 	$route['Employee-ChangePassword'] = 'UserPanel/changePassword';
+	$route['Employee-jobDetails'] = 'UserPanel/jobDetails';
+	$route['Employee-plans'] = 'UserPanel/membershipPlans';
+
 //Company Routes
 	$route['Employer-Login'] = 'LoginController/companyLoginPage';
 	$route['Employer-SignUp'] = 'LoginController/companyRegistrationPage';
