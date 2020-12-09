@@ -45,7 +45,7 @@
                             <a class="nav-link active" href="<?=base_url("Employee-Dashboard")?>">My Alerts </a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link active" href="<?=base_url("Employee-Dashboard")?>">Shine Premium </a>
+                            <a class="nav-link active" href="<?=base_url("Employee-plans")?>">Xhirez Premium </a>
                         </li>
                  <!--        {/* <li class="nav-item dropdown">
                             <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown"> Find Candidates  </a>

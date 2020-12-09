@@ -21,6 +21,7 @@ class UserPanel extends CI_Controller{
  		$this->load->view('userPanel/layout/header');
  		$this->load->view('userPanel/pages/changePassword');
  		$this->load->view('userPanel/layout/footer');
+<<<<<<< HEAD
  	}
  	public function updateBio(){
  		print_r($_POST);
@@ -30,5 +31,19 @@ class UserPanel extends CI_Controller{
  		}
  	}
 
+=======
+	 }
+	 
+	public function jobDetails(){
+		$this->load->view('userPanel/layout/header');
+		$this->load->view('userPanel/pages/jobDetails');
+		$this->load->view('userPanel/layout/footer');
+	}
+>>>>>>> a35d56fd9bf6beea7f722879c57098349f6e57e8
 
-}
+	public function membershipPlans(){
+		$this->load->view('userPanel/layout/header');
+		$this->load->view('userPanel/pages/memberships');
+		$this->load->view('userPanel/layout/footer');
+	}
+}	

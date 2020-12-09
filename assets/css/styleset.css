@@ -223,7 +223,7 @@ body {
 .nav-link{
     font-size: 20px !important;
     font-weight: 500;
-    padding: 0px 8px !important;
+    padding: 3px 8px !important;
 }
 .padT{
 	    padding: 0px 74px;
@@ -453,9 +453,10 @@ button:focus{
 }
 .infoIcon{
   position: absolute;
-  right: -10px;
+  right: -10px; 
   margin-top: -13px;
   color: brown;
+  top: 0px;
 }
 .fnt12{
   font-size: 12px;
@@ -614,4 +615,36 @@ button:focus{
     .details_jon .osl{
         margin-left: 0rem;
     }
+}
+.memberTitle{
+  border-top: 9px solid brown;
+  padding: 20px 4px;
+}
+.memberTitle h2{
+  font-weight: 600;
+    font-size: 31px;
+    color: #4e4e4e;
+}
+.planss{
+  background: #faebd763;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  padding: 30px;
+  color: #4e4e4e;
+}
+.margbot25{
+  margin-bottom: 25px;
+}
+.planLista{
+  padding: 0px;
+  list-style-type: none;
+}
+.planLista li span{ 
+  color:brown;
+}
+.line_h12{
+    line-height: .5;
+}
+.line_h12 small{
+  font-size: 10px;
+  color: gray;
 }
