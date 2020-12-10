@@ -318,7 +318,7 @@
   border: 2px solid white;
   background: brown;
   font-weight: 500;
-  color: white;
+  color: white !important;
   
 }
 .ntns:focus{border:none}

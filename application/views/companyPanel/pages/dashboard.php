@@ -11,7 +11,7 @@
                 <div class="shadow padHire">
                     <h3 class="mb-0 hIreJ">Find your next Great Hire</h3>
                     <span>Choose from 3.40 crore candidates with exactly the skills you're seeking.</span>
-                    <br/><button class="ntns ml-0">Find Candidates</button>
+                    <br/><a href="<?=base_url('Employer-Candidate')?>" class="d-inline-block ntns ml-0">Find Candidates</a>
                 </div>
             </div>
             <div class="col-md-4 pr_0">

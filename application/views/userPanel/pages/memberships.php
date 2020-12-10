@@ -22,13 +22,17 @@
             <div class="col-md-4">
                  <div class="planss">
                      <div class="">
-                         <h2 class="margbot25"><i class="fas fa-rupee-sign"></i> 60</h2>
+                        <div class="text-center margbot25">
+                            <div class="pricePlan">
+                                <span class=""><i class="fas fa-rupee-sign"></i> 60</span>
+                            </div>
+                        </div>
                         
-                         <div class="margbot25 line_h12">
+                         <div class="text-center margbot25 line_h12">
                             <h4 class="mb-0">SILVER</h4>
                             <small>For 60 days</small>
                          </div>
-                         <div class="">
+                         <div class="text-center">
                             <ul class="planLista">
                                 <li>
                                     <span><i class="fas fa-check-double"></i></span><small class="ml-2">Post 1 Job</small>

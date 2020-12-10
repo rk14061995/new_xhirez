@@ -48,12 +48,17 @@ function __construct(){
  	}
 
 	public function ManageEmails(){
- 		// print_r($this->session->userdata('login'));
- 		$this->load->view('companyPanel/layout/header');
- 		$this->load->view('companyPanel/pages/manageEmails');
- 		$this->load->view('companyPanel/layout/footer');
- 		// $this->load->view('admin/Pages/index');
- 		// $this->load->view('Layout/footer');
- 	}
+        // print_r($this->session->userdata('login'));
+        $this->load->view('companyPanel/layout/header');
+        $this->load->view('companyPanel/pages/manageEmails');
+        $this->load->view('companyPanel/layout/footer');
+        // $this->load->view('admin/Pages/index');
+        // $this->load->view('Layout/footer');
+	}
+	public function CandidateSearch(){
+		$this->load->view('companyPanel/layout/header');
+        $this->load->view('companyPanel/pages/candidateSearch');
+        $this->load->view('companyPanel/layout/footer');
+	}
 
 }

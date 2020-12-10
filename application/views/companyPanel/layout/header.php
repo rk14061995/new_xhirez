@@ -19,7 +19,7 @@
 <link rel="stylesheet" href='<?=base_url("assets/css/styleset.css")?>'>
 <link rel="stylesheet" href='<?=base_url("assets/css/companyadmin.css")?>'>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'> -->
     <script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
 </head>
 <body>

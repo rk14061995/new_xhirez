@@ -34,4 +34,10 @@ class UserPanel extends CI_Controller{
 		$this->load->view('userPanel/pages/memberships');
 		$this->load->view('userPanel/layout/footer');
 	}
+
+	public function myprofile(){
+		$this->load->view('userPanel/layout/header');
+		$this->load->view('userPanel/pages/profile');
+		$this->load->view('userPanel/layout/footer');
+	}
 }	

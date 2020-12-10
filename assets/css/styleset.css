@@ -445,6 +445,9 @@ button:focus{
 .bookmarkIcon:hover{
   color: gold;
 }
+.colGold{
+  color: gold;
+}
 .pointer{
   cursor:pointer;
 }
@@ -647,4 +650,84 @@ button:focus{
 .line_h12 small{
   font-size: 10px;
   color: gray;
+}
+.edit_info{
+  display: none;
+}
+.work_sumryEdit{
+  display: none;
+}
+.educaEdit{
+  display: none;
+}
+.skilShw{
+  display: none;
+}
+.colDark{
+  color: #4e4e4e;
+}
+.pricePlan{
+  width: 100px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 50%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 23px;
+  font-weight: 600;
+}
+.candidate_profile{
+  margin-top:30px;
+  background:white;
+  display: block;
+  color: #798590 !important;
+}
+.candidate_profile h5{
+  color: #151515;
+  font-size: 16px;
+}
+.star_rating{
+  font-size: 12px;
+  margin-top: 2px;
+}
+.star_rating li{
+padding:0px 1px;
+}
+.saplCandidate{
+  padding: 15px;
+}
+.DpidCan{
+  font-size: 14px;
+  color: brown;
+}
+.fnt12{font-size: 12px;}
+.employer_work_contact{
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+}
+.employer_work_contact li{
+   
+    padding: 5px 8px;
+    margin-left: 4px;
+
+}
+.inspt{
+  padding-left: 33px;
+  border-radius: 0px;
+  height: 50px;
+}
+.pad133{
+  
+  padding: 13px 0px !important;
+
+}
+.placeMark{
+  position: absolute;
+  top: 12px;
+  font-size: 17px;
+  left: 10px;
 }
