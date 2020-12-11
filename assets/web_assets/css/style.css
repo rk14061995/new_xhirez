@@ -345,3 +345,78 @@ padding-top:22px ;
 .select2-container{
     width: 100% !important;
 }
+.viewJob{
+    border: 1px solid #d2d2d2;
+    padding: 20px;
+    color: #808080d9;
+    border-radius: 5px;
+    font-size: 13px;
+    display: block;
+    margin-top: 20px;
+}
+.viewJobTitle{
+    color: #111111;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.viewJob h6{
+    
+    color: #111111;
+}
+.filtSearch{
+    height: 27px;
+    font-size: 11px;
+    padding: 5px;
+
+}
+.viewJob:hover{
+    color: #808080d9 !important; 
+}
+.viewJob:hover .viewJobTitle {
+    color:#00adef !important;
+}
+.backSet{
+    background:#f7f7f7eb;
+}
+.polaD li{
+    margin-right:8px;
+}
+.viewDet{
+    border: 1px solid #d2d2d2;
+    border-radius: 4px;
+}
+.viewTopHed{
+    padding: 20px;
+    box-shadow: 0px 5px 9px -4px #00000052;
+}
+
+.scrollDetails{
+    padding: 20px;
+    font-size: 13px;
+    height: 70vh;
+    overflow-y: scroll;
+}
+
+#style-3::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+#style-3::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+#style-3::-webkit-scrollbar-thumb
+{
+	background-color: #969696;
+}
+.stickyRes {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+
+  }

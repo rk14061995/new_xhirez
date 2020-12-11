@@ -38,7 +38,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="mt-4">
+                <div class="mt-5">
                     <h6>PACKAGE</h6>
 
                     <div class="">
@@ -46,8 +46,8 @@
                             <?php for($a=0; $a <5; $a++){?>
                                 <li>
                                     <div class="">
-                                        <input id="'id'<?=$a?>" type='checkbox' class="chkBOx" name=""/>
-                                        <label for="'id'<?=$a?>">
+                                        <input id="'pack'<?=$a?>" type='checkbox' class="chkBOx" name=""/>
+                                        <label for="'pack'<?=$a?>">
                                             <span></span>
                                             &#8377; 0 - &#8377; 2222  
                                         </label>
@@ -58,7 +58,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="mt-4">
+                <div class="mt-5">
                     <h6>SPECIALITY</h6>
 
                     <div class="">
@@ -66,8 +66,8 @@
                             <?php for($a=0; $a <5; $a++){?>
                                 <li>
                                     <div class="">
-                                        <input id="'id'<?=$a?>" type='checkbox' class="chkBOx" name=""/>
-                                        <label for="'id'<?=$a?>">
+                                        <input id="'spec'<?=$a?>" type='checkbox' class="chkBOx" name=""/>
+                                        <label for="'spec'<?=$a?>">
                                             <span></span>
                                         Computer Operator
                                         </label>

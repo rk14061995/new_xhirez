@@ -71,5 +71,14 @@ class Website extends CI_Controller{
  		$this->load->view('website/layout/footer');
  		// $this->load->view('admin/Pages/index');
  		// $this->load->view('Layout/footer');
- 	}
+	 }
+	 
+	 public function JobSearch(){
+		// print_r($this->session->userdata('login'));
+		$this->load->view('website/layout/header');
+		$this->load->view('website/webpages/jobSearch');
+		$this->load->view('website/layout/footer');
+		// $this->load->view('admin/Pages/index');
+		// $this->load->view('Layout/footer');
+	}
 }
